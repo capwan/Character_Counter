@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Character Counter</h1>
+    <p class="subtitle">
+      Count characters, words, sentences and paragraphs.
+    </p>
+
+    <textarea name="" id="textarea" rows="15"></textarea>
+
+    <div class="count">
+      <div class="box">
+        <h5 id="characters">0</h5>
+          <p>characters</p>
+      </div>
+
+      <div class="box">
+        <h5 id="words">0</h5>
+          <p>words</p>
+      </div>
+
+      <div class="box">
+        <h5 id="sentences">0</h5>
+          <p>sentences</p>
+      </div>
+
+      <div class="box">
+        <h5 id="paragraphs">0</h5>
+          <p>paragraphs</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let textarea = document.getElementById("textarea");
+    let characters = document.getElementById("characters");
+    let words = document.getElementById("words");
+    let sentences = document.getElementById("sentences");
+    let paragraphs = document.getElementById("paragraphs");
+
+    textarea.addEventListener("input", () => {
+
+      characters.textContent = textarea.value.length;
+      let text = textarea.value.trim();
+
+      words.textContent = text.split(/\s+/).filter((item)=> item).length;
+
+      sentences.textContent = text.split(/[.|!|?]+/g).length-1;
+
+      paragraphs.textContent = text.replace(/\n$/gm, '').split(/\n/).length;
+    
+    });
+
+  </script>
+
+</body>
+
+
+
+</html>

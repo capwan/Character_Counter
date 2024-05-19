@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+body{
+    background-color: #251F47;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+h1{
+    color: white;
+    font-size: 50px;
+    padding: 20px;
+    border-radius: 40%;
+    border: black;
+}
+
+.subtitle{
+    color: #ccc;
+    margin-bottom: 30px;
+    border-radius: 40%;
+    border: black;
+}
+
+textarea{
+    width: 750px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 23px;
+    color: #404E7C;
+    padding: 50px 30px 50px 30px;
+    border-radius: 8px;
+}
+
+.count{
+    background-color: #404E7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 815px;
+    border-radius: 20px;
+}
+
+.box{
+    padding: 10px 20px;
+    margin: 0px 45px;
+    text-align: center;
+}
+
+p{
+    color: white;
+    border-radius: 40%;
+    border: black;
+}
+
+h5{
+    color: white;
+    border-radius: 40%;
+    border: black;
+    font-size: 32px;
+}
+
+/* ADAPTIVE */
+
+@media(max-width: 450px){
+    h1 {
+        text-align: center;
+        margin: 50px auto 50px;
+        font-weight: 600;
+        border-radius: 40%;
+        font-size: 25px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+        border-radius: 40%;
+        border: black;
+        font-size: 18px;
+    }
+
+    textarea{
+        width: 200px;
+        border: none;
+        resize: none;
+        outline: none;
+        font-size: 18px;
+        color: #404E7C;
+        padding: 50px 30px 50px 30px;
+        border-radius: 8px;
+    }
+    
+    .count{
+        background-color: #404E7C;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:row;
+        width: 320px;
+        border-radius: 30px;
+    }
+    
+    .box{
+        padding: 2px 5px;
+        margin: 30px 5px;
+        margin-left: 5px;
+        padding-left: 0.5px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    p{
+        color: white;
+        border-radius: 40%;
+        border: black;
+        font-size: 13px;
+    }
+    
+    h5{
+        color: white;
+        border-radius: 40%;
+        border: black;
+        font-size: 20px;
+    }
+    
+
+    
+}
+
