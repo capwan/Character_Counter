@@ -1,143 +1,116 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+/* Оптимизированный импорт: только нужные веса */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-*{
+* {
     padding: 0;
     margin: 0;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, -apple-system, sans-serif;
 }
 
-body{
-    background-color: #251F47;
-}
-
-.container{
+body {
+    background-color: #1a1635;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 90vh;
-}
-
-h1{
-    color: white;
-    font-size: 50px;
+    min-height: 100vh;
     padding: 20px;
-    border-radius: 40%;
-    border: black;
 }
 
-.subtitle{
-    color: #ccc;
-    margin-bottom: 30px;
-    border-radius: 40%;
-    border: black;
+.container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-textarea{
-    width: 750px;
+.header { text-align: center; }
+
+h1 {
+    /* Исправленный clamp: минимум 1.8rem, максимум 2.5rem */
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #a29bfe;
+    font-weight: 300;
+    /* Исправленный clamp: теперь он всегда меньше заголовка */
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 400px;
+    background-color: #ffffff;
     border: none;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 18px;
+    color: #2d3436;
     resize: none;
     outline: none;
-    font-size: 23px;
-    color: #404E7C;
-    padding: 50px 30px 50px 30px;
-    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.count{
-    background-color: #404E7C;
+/* Делаем плейсхолдер прозрачнее */
+textarea::placeholder {
+    color: rgba(45, 52, 54, 0.4);
+}
+
+.controls {
     display: flex;
+    gap: 15px;
     justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 815px;
-    border-radius: 20px;
+    margin: 10px 0;
 }
 
-.box{
-    padding: 10px 20px;
-    margin: 0px 45px;
+.btn {
+    padding: 12px 30px;
+    min-width: 140px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+#btn-copy { background-color: #6c5ce7; color: white; }
+#btn-copy:hover { background-color: #a29bfe; }
+
+.btn-outline {
+    background-color: #342e5a;
+    color: #ff7675;
+    border: 1px solid #ff7675;
+}
+.btn-outline:hover { background-color: #ff7675; color: white; }
+
+.count {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-p{
-    color: white;
-    border-radius: 40%;
-    border: black;
+.box h5 { font-size: 24px; color: #6c5ce7; }
+.box p { font-size: 12px; text-transform: uppercase; color: #ccc; }
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    body { align-items: flex-start; }
+    textarea { height: 300px; }
 }
 
-h5{
-    color: white;
-    border-radius: 40%;
-    border: black;
-    font-size: 32px;
+@media (max-width: 600px) {
+    .count { grid-template-columns: 1fr 1fr; }
 }
-
-/* ADAPTIVE */
-
-@media(max-width: 450px){
-    h1 {
-        text-align: center;
-        margin: 50px auto 50px;
-        font-weight: 600;
-        border-radius: 40%;
-        font-size: 25px;
-    }
-
-    .subtitle {
-        text-align: center;
-        margin-bottom: 30px;
-        border-radius: 40%;
-        border: black;
-        font-size: 18px;
-    }
-
-    textarea{
-        width: 200px;
-        border: none;
-        resize: none;
-        outline: none;
-        font-size: 18px;
-        color: #404E7C;
-        padding: 50px 30px 50px 30px;
-        border-radius: 8px;
-    }
-    
-    .count{
-        background-color: #404E7C;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction:row;
-        width: 320px;
-        border-radius: 30px;
-    }
-    
-    .box{
-        padding: 2px 5px;
-        margin: 30px 5px;
-        margin-left: 5px;
-        padding-left: 0.5px;
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    p{
-        color: white;
-        border-radius: 40%;
-        border: black;
-        font-size: 13px;
-    }
-    
-    h5{
-        color: white;
-        border-radius: 40%;
-        border: black;
-        font-size: 20px;
-    }
-    
-
-    
-}
-
