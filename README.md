@@ -2,6 +2,7 @@
 Live counter of characters,words,sentences &amp; paragraphs.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ ![Tech: Vanilla JS](https://img.shields.io/badge/Tech-VanillaJS-blue)
 
 ## 🌟 Features
 - **Real-time Updates:** Counters update instantly as you type.
